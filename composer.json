@@ -1,0 +1,38 @@
+{
+  "name": "sourcebroker/deployer-typo3-media",
+  "description": "Media sync for TYPO3 with deployer-extended-media.",
+  "license": "MIT",
+  "keywords": [
+    "TYPO3",
+    "deployer"
+  ],
+  "authors": [
+    {
+      "name": "Krystian Szymukowicz",
+      "email": "k.szymukowicz@gmail.com"
+    }
+  ],
+  "require": {
+    "typo3/cms-core": "^12.4 || ^13.4",
+    "deployer/deployer": "~7.0 || dev-master",
+    "sourcebroker/deployer-extended-media": "^13 || dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "SourceBroker\\DeployerTypo3Media\\": "src/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "typo3/cms-composer-installers": true,
+      "typo3/class-alias-loader": true,
+      "helhum/dotenv-connector": true
+    }
+  }
+}
