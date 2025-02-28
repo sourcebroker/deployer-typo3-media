@@ -2,7 +2,7 @@ deployer-typo3-media
 ====================
 
       .. image:: http://img.shields.io/packagist/v/sourcebroker/deployer-typo3-media.svg?style=flat
-         :target: https://packagist.org/packages/sourcebroker/deployer-extended-typo3
+         :target: https://packagist.org/packages/sourcebroker/deployer-typo3-media
 
       .. image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
          :target: https://packagist.org/packages/sourcebroker/deployer-typo3-media
@@ -17,7 +17,7 @@ This is experimental package for now. Do not use it yet.
 What does it do?
 ----------------
 
-This package provides settings to use `sourcebroker/deployer-extended-media`_ package with TYPO3 CMS.
+This package provides settings to use package `sourcebroker/deployer-extended-media`_  with TYPO3 CMS.
 It allows to sync media between instances.
 
 Installation
@@ -33,7 +33,9 @@ Installation
    ::
 
       require_once(__DIR__ . '/vendor/sourcebroker/deployer-loader/autoload.php');
-      new \SourceBroker\DeployerTypo3Media\Loader();
+      new \SourceBroker\DeployerLoader\Loader([
+        ['get' => 'sourcebroker/deployer-typo3-media'],
+      ]);
 
 
 Synchronizing media
@@ -42,7 +44,7 @@ Synchronizing media
 The command for synchronizing media from production to local instance (usually your laptop):
 ::
 
-   dep media:pull live
+   dep media:pull production
 
 
 Command for synchronizing media from production to staging instance is:
@@ -66,20 +68,21 @@ This is example of working configuration for TYPO3 13.
   namespace Deployer;
 
   require_once(__DIR__ . '/vendor/sourcebroker/deployer-loader/autoload.php');
-
-  new \SourceBroker\DeployerTypo3Media\Loader();
+  new \SourceBroker\DeployerLoader\Loader([
+    ['get' => 'sourcebroker/deployer-typo3-media'],
+  ]);
 
   host('production')
       ->setHostname('vm-dev.example.com')
       ->setRemoteUser('deploy')
-      ->set('bin/php', '/home/www/t3base13/production/.bin/php');
-      ->set('deploy_path', '/home/www/t3base13/production');
+      ->set('bin/php', '/home/www/t3base13-public/production/.bin/php');
+      ->set('deploy_path', '~/t3base13/production');
 
   host('staging')
       ->setHostname('vm-dev.example.com')
       ->setRemoteUser('deploy')
-      ->set('bin/php', '/home/www/t3base13/staging/.bin/php');
-      ->set('deploy_path', '/home/www/t3base13/staging');
+      ->set('bin/php', '/home/www/t3base13-public/staging/.bin/php');
+      ->set('deploy_path', '~/t3base13/staging');
 
   localhost('local')
       ->set('bin/php', 'php')
