@@ -32,10 +32,14 @@ Installation
 2) Put following lines on the beginning of your deploy.php:
    ::
 
-      require_once(__DIR__ . '/vendor/sourcebroker/deployer-loader/autoload.php');
+      require_once(__DIR__ . '/vendor/autoload.php');
       new \SourceBroker\DeployerLoader\Loader([
         ['get' => 'sourcebroker/deployer-typo3-media'],
       ]);
+
+
+   If you have some conflicts of packages between your root project and deployer.phar you can try
+   to use ``/vendor/sourcebroker/deployer-loader/autoload.php`` instead of ``/vendor/autoload.php``.
 
 
 Synchronizing media
@@ -52,7 +56,11 @@ Command for synchronizing media from production to staging instance is:
 
    dep media:copy production --options=target:staging
 
-   # Creates symlinks to each file in shared folder. Good to safe space on disk.
+Command for synchronizing media from production to staging, creating symlinks to each file in shared folder
+if both instances are at the same server. Good to safe space on disk:
+
+::
+
    dep media:link production --options=target:staging
 
 
@@ -67,7 +75,7 @@ This is example of working configuration for TYPO3 13.
 
   namespace Deployer;
 
-  require_once(__DIR__ . '/vendor/sourcebroker/deployer-loader/autoload.php');
+  require_once(__DIR__ . '/vendor/autoload.php');
   new \SourceBroker\DeployerLoader\Loader([
     ['get' => 'sourcebroker/deployer-typo3-media'],
   ]);
