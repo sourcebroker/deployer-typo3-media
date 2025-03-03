@@ -13,7 +13,6 @@
     }
   ],
   "require": {
-    "typo3/cms-core": "^12.4 || ^13.4",
     "deployer/deployer": "~7.0 || dev-master",
     "sourcebroker/deployer-extended-media": "^13 || dev-master"
   },
