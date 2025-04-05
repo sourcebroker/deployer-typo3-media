@@ -79,9 +79,27 @@ Installation
    c. ``INSTANCE=local`` at your local env (laptop)
 
    As an alternative you can also not create any env file but make sure that
-   the env variable INSTANCE exists in system at hosts defined in deplyer
+   the env variable INSTANCE exists in system at hosts defined in deployer
    (and also at your local host).
 
+TYPO3 sync media
+----------------
+
+TYPO3 sync folder is ``fileadmin`` with exclusion of ``_processed_`` folder.
+
+::
+
+   set('media', function () {
+    return [
+        'filter' => [
+            '+ /' . get('web_path'),
+            '+ /' . get('web_path') . 'fileadmin/',
+            '- /' . get('web_path') . 'fileadmin/_processed_/*',
+            '+ /' . get('web_path') . 'fileadmin/**',
+            '- *'
+        ]
+    ];
+   });
 
 Synchronizing media
 -------------------
@@ -120,6 +138,8 @@ The commands for synchronizing media for the example above configuration would b
 
    dep media:push production
 
+
+For more options and way to extend sync process visit `sourcebroker/deployer-extended-media`_.
 
 Changelog
 ---------
