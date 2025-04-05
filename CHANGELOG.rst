@@ -2,6 +2,12 @@
 Changelog
 ---------
 
+0.0.4
+-----
+
+1) [TASK][BREAKING] Drop requirement to ``deployer/deployer`` as is already declared at ``sourcebroker/deployer-extended-media``.
+   Clean up composer.json.
+
 0.0.3
 -----
 

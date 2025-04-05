@@ -13,28 +13,6 @@
     }
   ],
   "require": {
-    "deployer/deployer": "~7.0 || dev-master",
     "sourcebroker/deployer-extended-media": "^13 || dev-master"
-  },
-  "autoload": {
-    "psr-4": {
-      "SourceBroker\\DeployerTypo3Media\\": "src/"
-    }
-  },
-  "extra": {
-    "deployer": {
-      "loader-file": "config/loader.php"
-    },
-    "typo3/cms": {
-      "cms-package-dir": "{$vendor-dir}/typo3/cms",
-      "web-dir": ".Build/Web"
-    }
-  },
-  "config": {
-    "allow-plugins": {
-      "typo3/cms-composer-installers": true,
-      "typo3/class-alias-loader": true,
-      "helhum/dotenv-connector": true
-    }
   }
 }
