@@ -13,6 +13,6 @@
     }
   ],
   "require": {
-    "sourcebroker/deployer-extended-media": "^13 || dev-master"
+    "sourcebroker/deployer-extended-media": "^14 || dev-master"
   }
 }

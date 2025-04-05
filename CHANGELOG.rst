@@ -2,6 +2,11 @@
 Changelog
 ---------
 
+0.0.5
+-----
+
+1) [TASK][BREAKING] Update to breaking change of ``sourcebroker/deployer-instance``.
+
 0.0.4
 -----
 
