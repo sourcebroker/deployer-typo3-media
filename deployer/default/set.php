@@ -2,11 +2,6 @@
 
 namespace Deployer;
 
-// Look https://github.com/sourcebroker/deployer-extended-media for docs
-set('media_allow_push_live', false);
-set('media_allow_copy_live', false);
-set('media_allow_link_live', false);
-set('media_allow_pull_live', false);
 set('media', function () {
     return [
         'filter' => [

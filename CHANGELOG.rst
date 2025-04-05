@@ -8,6 +8,8 @@ Changelog
 1) [TASK][BREAKING] Drop requirement to ``deployer/deployer`` as is already declared at ``sourcebroker/deployer-extended-media``.
    Clean up composer.json.
 
+2) [TASK][BREAKING] Remove disabling push to top instances. This should be part of higher, custom package.
+
 0.0.3
 -----
 
