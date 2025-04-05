@@ -10,6 +10,8 @@ Changelog
 
 2) [TASK][BREAKING] Remove disabling push to top instances. This should be part of higher, custom package.
 
+3) [TASK] Add ``web_path`` for case when ``sourcebroker/deployer-typo3-deploy-ci`` or ``sourcebroker/deployer-typo3-deploy`` is not used.
+
 0.0.3
 -----
 
