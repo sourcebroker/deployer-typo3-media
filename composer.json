@@ -14,5 +14,6 @@
   ],
   "require": {
     "sourcebroker/deployer-extended-media": "^14 || dev-master"
-  }
+  },
+  "prefer-stable": true
 }
